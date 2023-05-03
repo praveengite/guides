@@ -1,4 +1,25 @@
+##prerequisites##
+Basic or advance knowledge of configuration of ONT/ONU or router and udersatanding of working of an ISP.
+
+
 Requirements
 1. VPN Details from BSNL
 2. VLAN ID (submitted during customer provisioning in BSNL FMS)
 
+Steps
+1. Configure the WAN profile on the ONT/ONU according to the details received from BSNL FMS.
+2. If using multiple WAN profiles on the ONT/ONU, bind a seperate LAN port for VPN to be accessed via a PC designated in the concerned customer office for IFMIS.
+3. Assign a local IP address in the class of the ONT/ONU on the host PC and use specified DNS as primary DNS 10.5.11.17 and secondary DNS as 8.8.8.8
+   example of configuration of host PC for IFMIS.
+   IP Address: 192.168.1.254
+   Subnet:     255.255.255.0
+   Gateway:    192.168.1.1
+   DNS1:       10.5.11.17
+   DNS2:       8.8.8.8
+   
+4. Test the connectivity by accessing the following urls: https://ifmisprod.mptreasury.gov.in/IFMIS or by IP address http://10.5.11.4
+5. To test e-sign working test urls as: https://authenticate.e-mudra.com or https://esign.mp.gov.in
+6. Also connection can be tested by pinging to IPs: 10.5.11.4 or 10.5.11.17
+
+Note: These guides are based on personal experiences and cannot be considered as de-facto for any purpose.Configuration of equipments, devices, routers, ONTs, ONUs etc
+may vary according to geographical locations.
