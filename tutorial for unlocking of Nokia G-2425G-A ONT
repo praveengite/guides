@@ -2,7 +2,7 @@ Disclaimer: This is just for educational & research puropose only. The owner of 
 
 Step 1: Login to ONT via any web browser using the probable IP address - 192.168.1.1
 Step 2: In the left menu, go to Maintainence --> Backup and Restore --> upload the config file attached below and import. ONT will reboot itself after successful import.
-
+        config file: <a href="https://github.com/praveengite/scripts/blob/main/config.cfg">config.cfg</a>
 Step 3: Login again to ONT via same IP addresss and in the left menu, go to Security --> Access Control and enable Telnet for both WAN and LAN.
 Step 4: Telnet to ONT using via IP 192.168.1.1 using any client or software.
 Step 5: Telnet credentials will be ONTUSER : admin
