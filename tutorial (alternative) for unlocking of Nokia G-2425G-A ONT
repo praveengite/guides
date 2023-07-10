@@ -1,0 +1,30 @@
+Disclaimer: This is just for educational & research puropose only. The owner of this post is not responsilbe for any unauthorised misuse or misinterpretaion of information shared here.
+
+In case the previous tutorial didn't worked. This is in reference to a windows machine only.
+
+##prerequestries##
+python should be installed and configured
+
+Step 1: Login to ONT via any web browser using the probable IP address - 192.168.1.1
+Step 2: In the left menu, go to Maintainence --> Backup and Restore --> export the config file. A file name 'config.cfg' will be downloaded.
+Step 3: Download the python script from https://github.com/praveengite/scripts/raw/main/nokia-router-cfg-tool-0223.py and save on appropriate folder.
+Step 4: Move the config.cfg downloaded previously from the ONT to the same folder as the pyhon script and decrypt the file in commad prompt using
+        <prompt> python nokia-router-cfg-tool-0223.py -d OYdLWUVDdKQTPaCIeTqniA==
+Step 5: Now unpack the previously decrypted file using command as:
+        <prompt> python nokia-router-cfg-tool-0223.py -u config.cfg
+        a new .xml file will be created with appended date and time. Keep command prompt open while the process is completed. 
+Step 6: Open the unpacked XML and edit the follwing entries (use the search function in editor to find the correct value)
+        <TelnetSshAccount. n="TelnetSshAccount" t="staticObject">
+            <Enable rw="RW" t="boolean" v="True"></Enable>
+            <UserName ml="64" rw="RW" t="string" v="ONTUSER"></UserName>
+            <Password ml="64" rw="RW" t="string" v="random password" ealgo="ab"></Password>  (minimum 8 characters, i prefer password as "OYdLWUVDdKQTPaCIeTqniA==")
+        save and close the file.
+Step 7: Go back to command prompt and re-encrypt the file with the command shown after decrypting the file in the command prompt.
+        something like <prompt> python nokia-router-cfg-tool-0223.py config-XXXXXXX-XXXXXX.xml 0x4924ea42
+Step 8: A new cfg file will be generated in the working directory rename it to config.cfg (rename the original to config-org.cfg) and restore the config in ONT by going to Maintainence --> Backup and Restore --> import config.cfg , ONT will reboot with new config.
+Step 9: Login again to ONT via same IP addresss and in the left menu, go to Security --> Access Control and enable Telnet for both WAN and LAN.
+Step 4: Telnet to ONT using via IP 192.168.1.1 using any client or software.
+Step 5: Telnet credentials will be ONTUSER : (random passoword)
+Step 6: After successful login into ONT, to unlock all options use command as: ritool set OperatorID ALCL
+Step 7: Refresh the web interface on ONT and boom!! ONT is now fully unlocked.
+Step 8: Go to Maintainence --> Factory defaults and reset the ONT. After reboot the ONT will be fully unlocked with all features, the credentials will be AdminGPON : ALC#FGU and new gateway IP will be 192.168.1.254
