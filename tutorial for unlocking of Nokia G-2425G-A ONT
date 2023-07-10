@@ -8,4 +8,4 @@ Step 4: Telnet to ONT using via IP 192.168.1.1 using any client or software.
 Step 5: Telnet credentials will be ONTUSER : admin
 Step 6: After successful login into ONT, to unlock all options use command as: ritool set OperatorID ALCL
 Step 7: Refresh the web interface on ONT and boom!! ONT is now fully unlocked.
-Step 8: Go to Maintainence --> Factory defaults and reset the ONT. After reboot the ONT will be fully unlocked with all features, the credentials will be AdminGPON : ALC#FGU
+Step 8: Go to Maintainence --> Factory defaults and reset the ONT. After reboot the ONT will be fully unlocked with all features, the credentials will be AdminGPON : ALC#FGU and new gateway IP will be 192.168.1.254
