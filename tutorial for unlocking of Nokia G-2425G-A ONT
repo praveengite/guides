@@ -1,0 +1,11 @@
+Disclaimer: This is just for educational & research puropose only. The owner of this post is not responsilbe for any unauthorised misuse or misinterpretaion of information shared here.
+
+Step 1: Login to ONT via any web browser using the probable IP address - 192.168.1.1
+Step 2: In the left menu, go to Maintainence --> Backup and Restore --> upload the config file attached below and import. ONT will reboot itself after successful import.
+
+Step 3: Login again to ONT via same IP addresss and in the left menu, go to Security --> Access Control and enable Telnet for both WAN and LAN.
+Step 4: Telnet to ONT using via IP 192.168.1.1 using any client or software.
+Step 5: Telnet credentials will be ONTUSER : admin
+Step 6: After successful login into ONT, to unlock all options use command as: ritool set OperatorID ALCL
+Step 7: Refresh the web interface on ONT and boom!! ONT is now fully unlocked.
+Step 8: Go to Maintainence --> Factory defaults and reset the ONT. After reboot the ONT will be fully unlocked with all features, the credentials will be AdminGPON : ALC#FGU
